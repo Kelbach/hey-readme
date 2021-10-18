@@ -12,7 +12,8 @@ const renderLicenseSection = input => {
   if (input === 'No License') {
     return ''
   } else {
-    return `## License
+    return `
+    ## License
     This project is covered under the ${input} license.
     `
   }
@@ -20,19 +21,25 @@ const renderLicenseSection = input => {
 
 const renderCredits = data => {
   if (data.confirmCredit === false) {
-    return ''
+    return `
+    `
   } else {
-    //something about rendering names and links
+    return `
+    ## Credits
+    (contributors to be rendered)
+    `
   }
 }
 
 const renderContribution = data => {
   if (data.confirmContribution === false) {
-    return `## Guidelines for Contribution
+    return `
+    ## Guidelines for Contribution
     This project follows the guidelines of the [Contributor's Covenant](https://www.contributor-covenant.org/).
     `
   } else {
-    return `## Guidelines for Contribution
+    return `
+    ## Guidelines for Contribution
     ${data.contribution}
     `
   }
@@ -41,7 +48,7 @@ const renderContribution = data => {
 // TODO: Create a function to generate markdown for README
 const generateMarkdown = data => {
   return `
-  # ${data.title}${renderLicenseBadge(data.license)}
+  # ${data.title} ${renderLicenseBadge(data.license)}
 
   ## Description
   ${data.description}
@@ -58,19 +65,15 @@ const generateMarkdown = data => {
   
   ## Usage
   ${data.usage}
-
   ${renderCredits(data)}
-
   ${renderLicenseSection(data.license)}
-  
   ${renderContribution(data)}
-
   ## Tests
   ${data.test}
 
-  ##Questions, Comments, Concerns
-  GitHub Username: ${data.github}
-  Email Address: ${data.email}
+  ## Questions, Comments, Concerns
+  * GitHub Username: [${data.github}](https://github.com/${data.github})
+  * Email Address: ${data.email}
   `;
 }
 

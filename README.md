@@ -1,8 +1,8 @@
 
-  # TEST
+  # TEST [![Badge](https://img.shields.io/badge/License-The_Unlicense-yellow)](#license)
 
   ## Description
-  no thanks
+  describe
 
   ## Table of Contents
 
@@ -12,23 +12,26 @@
   * [License](#license)
   
   ## Installation
-  windows download mananger
+  installation instruction
   
   ## Usage
-  upside down
-
-  undefined
-
+  intended use
   
-  
-  ## Guidelines for Contribution
-    please be kind to each other
+    ## Credits
+    (contributors to be rendered)
     
-
+  
+    ## License
+    This project is covered under the The Unlicense license.
+    
+  
+    ## Guidelines for Contribution
+    This project follows the guidelines of the [Contributor's Covenant](https://www.contributor-covenant.org/).
+    
   ## Tests
-  i put the thing in node and bippity boppity coding magic
+  test case
 
-  ##Questions, Comments, Concerns
-  GitHub Username: k
-  Email Address: email
+  ## Questions, Comments, Concerns
+  * GitHub Username: [Kelbach](https://github.com/Kelbach)
+  * Email Address: kevin.kelbach@gmail.com
   

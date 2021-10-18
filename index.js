@@ -105,7 +105,7 @@ const init = () => {
             type: 'list',
             name: 'license',
             message: 'If applicable, please choose a license.',
-            choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense', 'No License']
+            choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public 2.0', 'Apache 2.0', 'MIT', 'Boost 1.0', 'The Unlicense', 'No License']
         },
         {
             type:'input',
