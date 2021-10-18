@@ -1,12 +1,14 @@
-//write a function for each different set of questions seperated by input type
-//then write a large scale function with thens at bottom
-
-// TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown');
 
-// TODO: Create an array of questions for user input
 const init = () => {
+    console.log(`
+    Welcome to the Hey-ReadMe Generator. 
+    After the series of questions your ReadMe will be generated! 
+    If at any point you'd like to exit the generator, type ctrl-C. 
+    You can also generate a ReadMe file and edit it afterward.
+    `)
     return inquirer
     .prompt([
         {
@@ -35,8 +37,6 @@ const init = () => {
                 }
             }
         },
-        // WHEN I enter usage information, contribution guidelines
-        // THEN this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests
         {
             type: 'input',
             name: 'installation',
@@ -63,20 +63,27 @@ const init = () => {
                 }
             }
         },
-        // {
-        //     type: 'confirm',
-        //     name: 'confirmContribution',
-        //     message: "Would you like to use the guidelines of the contributor's covenant? (visit contributor-covenant.org for more details)"
-        // },
+        {
+            type: 'confirm',
+            name: 'confirmContribution',
+            message: "Would you like to use guidelines apart from the contributor's covenant? (visit contributor-covenant.org for more details)"
+        },
         {
             type: 'input',
             name: 'contribution',
-            message: 'If you created an application or package and would like other developers to contribute it, could you add guidelines for how to do so.',
+            message: 'If you would like other developers to contribute it, could you add guidelines for how to do so.',
+            when: ({ confirmContribution }) => {
+                if (confirmContribution) {
+                  return true;
+                } else {
+                  return false;
+                }
+            },
             validate: nameInput => {
                 if (nameInput) {
                     return true;
                 } else {
-                    console.log('Please enter your name!');
+                    console.log('Please enter your guidelines.');
                     return false;
                 }
             }
@@ -126,16 +133,6 @@ const init = () => {
                 }
             }
         }
-        // WHEN I choose a license for my application from a list of options
-        // THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under            
-        //use seperator for license choice
-        
-        // WHEN I enter my GitHub username
-        // THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
-        // WHEN I enter my email address
-        // THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
-        // WHEN I click on the links in the Table of Contents
-        // THEN I am taken to the corresponding section of the README
     ]);
 };
 
@@ -194,17 +191,29 @@ const creditList = creditInfo => {
 
 
 // TODO: Create a function to write README file
-// const writeToFile = (fileName, data) => {
-//     return `
-    
-//     `
-// }
+const writeToFile = fileContent => {
+    return new Promise((resolve, reject) => {
+        fs.writeFile('./README.md', fileContent, err => {
+            if (err) {
+            reject(err);
+            return;
+            }
+            resolve({
+            ok: true
+            });
+        });
+    });
+};
 
 
 
 // Function call to initialize app
 init()
     .then(creditList)
-    .then(answers => {
-        console.log(answers);
-    });
+    .then(data => {
+        return generateMarkdown(data);
+    })
+    .then(pageMarkdown => {
+        writeToFile(pageMarkdown);
+        console.log('HEY! ReadMe file generated!')
+    })
