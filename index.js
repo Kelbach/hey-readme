@@ -144,7 +144,7 @@ const creditList = creditInfo => {
         {
             type: 'confirm',
             name: 'confirmCredit',
-            message: "Do you want to add a contributor?",
+            message: "Do you want to add a contributor?"
         },
         {
             type: 'input',
@@ -211,7 +211,9 @@ const writeToFile = fileContent => {
 init()
     .then(creditList)
     .then(data => {
+        console.log(data);
         return generateMarkdown(data);
+        
     })
     .then(pageMarkdown => {
         writeToFile(pageMarkdown);

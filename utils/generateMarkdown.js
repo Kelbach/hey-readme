@@ -12,34 +12,39 @@ const renderLicenseSection = input => {
   if (input === 'No License') {
     return ''
   } else {
-    return `
-    ## License
+    return `## License
     This project is covered under the ${input} license.
     `
   }
 }
 
-const renderCredits = data => {
+const renderCreditSection = data => {
+  var credit = [];
   if (data.confirmCredit === false) {
     return `
     `
   } else {
-    return `
-    ## Credits
-    (contributors to be rendered)
+    for (const val of data.add){
+    if (val.credit === undefined) {
+      console.log('stop')
+      break;
+    } else {
+      credit.push("["+val.credit+"]("+val.creditLink+")  ")
+    }
+  } console.log(credit);
+    return `## Credit
+    ${credit.concat()}
     `
   }
 }
 
 const renderContribution = data => {
   if (data.confirmContribution === false) {
-    return `
-    ## Guidelines for Contribution
+    return `## Guidelines for Contribution
     This project follows the guidelines of the [Contributor's Covenant](https://www.contributor-covenant.org/).
     `
   } else {
-    return `
-    ## Guidelines for Contribution
+    return `## Guidelines for Contribution
     ${data.contribution}
     `
   }
@@ -65,7 +70,8 @@ const generateMarkdown = data => {
   
   ## Usage
   ${data.usage}
-  ${renderCredits(data)}
+
+  ${renderCreditSection(data)}
   ${renderLicenseSection(data.license)}
   ${renderContribution(data)}
   ## Tests

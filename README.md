@@ -1,8 +1,8 @@
 
-  # TEST [![Badge](https://img.shields.io/badge/License-The_Unlicense-yellow)](#license)
+  # a [![Badge](https://img.shields.io/badge/License-GNU_AGPLv3-yellow)](#license)
 
   ## Description
-  describe
+  b
 
   ## Table of Contents
 
@@ -12,26 +12,24 @@
   * [License](#license)
   
   ## Installation
-  installation instruction
+  c
   
   ## Usage
-  intended use
-  
-    ## Credits
-    (contributors to be rendered)
+  d
+
+  ## Credit
+    [person1](link1)  ,[person2](link2)  
     
-  
-    ## License
-    This project is covered under the The Unlicense license.
+  ## License
+    This project is covered under the GNU AGPLv3 license.
     
-  
-    ## Guidelines for Contribution
+  ## Guidelines for Contribution
     This project follows the guidelines of the [Contributor's Covenant](https://www.contributor-covenant.org/).
     
   ## Tests
-  test case
+  f
 
   ## Questions, Comments, Concerns
-  * GitHub Username: [Kelbach](https://github.com/Kelbach)
-  * Email Address: kevin.kelbach@gmail.com
+  * GitHub Username: [h](https://github.com/h)
+  * Email Address: i
   
