@@ -13,7 +13,7 @@ const renderLicenseSection = input => {
     return ''
   } else {
     return `## License
-    This project is covered under the ${input} license.
+  This project is covered under the ${input} license.
     `
   }
 }
@@ -26,26 +26,25 @@ const renderCreditSection = data => {
   } else {
     for (const val of data.add){
     if (val.credit === undefined) {
-      console.log('stop')
       break;
     } else {
-      credit.push("["+val.credit+"]("+val.creditLink+")  ")
+      credit.push("["+val.credit+"]("+val.creditLink+") ")
     }
-  } console.log(credit);
-    return `## Credit
-    ${credit.concat()}
-    `
+  };
+  return `## Credit
+  ${credit.concat()}
+  `
   }
 }
 
 const renderContribution = data => {
   if (data.confirmContribution === false) {
     return `## Guidelines for Contribution
-    This project follows the guidelines of the [Contributor's Covenant](https://www.contributor-covenant.org/).
+  This project follows the guidelines of the [Contributor's Covenant](https://www.contributor-covenant.org/).
     `
   } else {
     return `## Guidelines for Contribution
-    ${data.contribution}
+  ${data.contribution}
     `
   }
 }
@@ -79,7 +78,7 @@ const generateMarkdown = data => {
 
   ## Questions, Comments, Concerns
   * GitHub Username: [${data.github}](https://github.com/${data.github})
-  * Email Address: ${data.email}
+  * Please feel free to contact me at ${data.email}.
   `;
 }
 

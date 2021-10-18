@@ -196,6 +196,7 @@ const writeToFile = fileContent => {
         fs.writeFile('./README.md', fileContent, err => {
             if (err) {
             reject(err);
+            console.log(err);
             return;
             }
             resolve({
@@ -211,9 +212,7 @@ const writeToFile = fileContent => {
 init()
     .then(creditList)
     .then(data => {
-        console.log(data);
         return generateMarkdown(data);
-        
     })
     .then(pageMarkdown => {
         writeToFile(pageMarkdown);

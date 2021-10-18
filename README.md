@@ -1,8 +1,8 @@
 
-  # a [![Badge](https://img.shields.io/badge/License-GNU_AGPLv3-yellow)](#license)
+  # Title 
 
   ## Description
-  b
+  Description
 
   ## Table of Contents
 
@@ -12,24 +12,22 @@
   * [License](#license)
   
   ## Installation
-  c
+  Installation Instructions
   
   ## Usage
-  d
+  Inteded Use
 
   ## Credit
-    [person1](link1)  ,[person2](link2)  
-    
-  ## License
-    This project is covered under the GNU AGPLv3 license.
-    
+  [contributor1](link1) ,[contributor2](link2) ,[contributor3](link3) 
+  
+  
   ## Guidelines for Contribution
-    This project follows the guidelines of the [Contributor's Covenant](https://www.contributor-covenant.org/).
+  Community Guidelines
     
   ## Tests
-  f
+  Test Case
 
   ## Questions, Comments, Concerns
-  * GitHub Username: [h](https://github.com/h)
-  * Email Address: i
+  * GitHub Username: [GitHubUser](https://github.com/GitHubUser)
+  * Please feel free to contact me at email.
   
